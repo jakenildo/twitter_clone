@@ -1,0 +1,47 @@
+<li>
+    <div class="col-lg-12 feed-item">
+        <div class="row">
+            <div class="col-lg-2 d-flex justify-content-center">
+                <div style="padding-top: 25px;">
+                    <%= link_to gravatar_for(micropost.user), micropost.user %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                
+                    <span id="user">
+                        <%= link_to micropost.user.name, micropost.user %>
+                    </span>
+
+                    <span class="timestamp">
+                       <i class="far fa-clock" style="regular"></i> Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+                    </span>
+                    
+                    <h4> <%= micropost.content %> </h4>
+
+                    <%= pluralize(micropost.likes.count, "like") %>
+                    
+                    <br>
+
+                    <span class="like">   
+                        <%= link_to raw("<i class='far fa-heart'></i>"), like_micropost_path(micropost) %> 
+                        <% if (micropost.likes.count >= 1)  %> 
+                        <%= link_to raw("<i class='fa fa-heart-broken'></i>"), dislike_micropost_path(micropost) %>
+                        <% else %>
+                        <a href="" class="isDisabled" disabled><i class='fa fa-heart-broken'></i><a>
+                        <% end %>
+
+                        <% if current_user?(micropost.user) %>
+                            <%= link_to raw("<i class='fa fa-trash'></i>"), micropost, method: :delete,
+                            data: { confirm: "Are you sure?" },
+                            title: micropost.content %>
+                        <% end %>
+                        <br>
+                    </span>
+
+                    
+                <div>
+            </div>
+        </div>
+    </div>
+</li>

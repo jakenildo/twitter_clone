@@ -1,0 +1,46 @@
+<%provide(:title, @title) %>
+
+<main role="main" class="container">
+<div class="container col-lg-12"><!--Container Start-->
+    <div class="jumbotron welcome"> <!--Jumbotron Start-->
+        
+        <div class="row">
+            <div class="col-lg-4">
+                <h4>
+                    <%= gravatar_for @user %>
+                    <%= @user.name %> <br>
+                </h4>
+                    <span> <%= link_to raw("<i class='fa fa-eye'></i> View my Profile"), @user %> </span><br>
+                    <span><b>Microposts:</b> <%= @user.microposts.count %> </span>
+                
+              <section>
+                <%= render 'shared/stats' %>
+                    <% if @all_users.any? %>
+                        <div class="user_avatars">
+                            <% @all_users.each do |user| %>
+                                <%= link_to gravatar_for(user, size: 30), user %>
+                            <% end %>
+                        </div>
+                    <% end %>
+              </section>
+            </div>
+
+            <div class="col-lg-8">
+                <h3> <%= @title %> </h3>
+                <% if @users.any? %>
+                    <% @users.each do |user| %>
+                        <ul class="users follow">
+                            <%= render user %>
+                        </ul>
+                    <% end %>
+                    <%= will_paginate%>
+                <% end %>
+            </div>
+            
+        </div><!-- Offset end -->
+
+    </div> <!--Jumbotron End-->
+
+
+</div> <!--Container End--> 
+</main>

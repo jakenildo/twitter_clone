@@ -1,0 +1,91 @@
+@import "bootstrap";
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body{
+    margin-top: 60px;
+    margin-bottom:  90px
+
+}
+
+ ol, ul{
+    list-style: none;
+}
+
+li{
+    padding-bottom: 10px;
+}
+
+.box{
+    margin-top: -50px;
+    margin-bottom: 20px;
+    width: 600px;
+    height: 320px;
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4252f013-3acb-46e7-beb8-ebe01d64e82d/dcsia1z-2cf7b9ba-4919-4397-a093-cbd8efe507e6.jpg/v1/fill/w_1024,h_683,q_75,strp/busy_streets_of_hong_kong___08_20_2018_by_jakeulous_dcsia1z-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD02ODMiLCJwYXRoIjoiXC9mXC80MjUyZjAxMy0zYWNiLTQ2ZTctYmViOC1lYmUwMWQ2NGU4MmRcL2Rjc2lhMXotMmNmN2I5YmEtNDkxOS00Mzk3LWEwOTMtY2JkOGVmZTUwN2U2LmpwZyIsIndpZHRoIjoiPD0xMDI0In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.lahw0VH9c7gsFq96Z5CLm4SW7cvo9k53YYN-hCwd9_M");
+    background-size: cover;
+    background-position: 50% 60% ;
+}
+
+.newsfeed{
+    background-color: #F2F6FA;
+    height: 550px;
+    border-style: outset;
+    overflow: auto;
+    margin-bottom: 15px;
+}
+
+.timestamp{
+    font-size: 12px;
+    color: gray;
+}
+
+#user a:link { color: black; }
+#user a:visited { color: black; }
+#user a:hover { color: rgb(44, 44, 44); }
+#user a:active { color: black; }
+
+
+.like {
+    a:link{padding-right: 30px;}
+}
+
+
+.fa-heart{
+    color: green;
+}
+
+.fa-heart-broken{
+    color: red;
+}
+
+.fa-trash{
+    color:red;
+}
+
+.feed-item{
+    border-top-style: solid;
+    border-color: rgba(53, 53, 53, 0.287);
+}
+
+.isDisabled {
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+  }

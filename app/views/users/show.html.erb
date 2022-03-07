@@ -1,0 +1,53 @@
+<% provide(:title, @user.name) %>
+
+<main role="main" class="container">
+<div class="container col-lg-12"><!--Container Start-->
+    <div class="jumbotron welcome"> <!--Jumbotron Start-->
+    <div class="container">
+
+    <div class="row">
+            <div class="col col-lg-12 box">
+                
+            </div>
+        </div>
+
+      <div class="row">
+            <div class="col col-lg-4">
+              <h4>
+                <%= gravatar_for @user %>
+                <%= @user.name %> 
+              </h4>
+
+              <section>
+                <%= render 'shared/stats' %>
+                <%= render 'follow_form' if logged_in? %>
+              </section>
+              <% if @user.id == current_user.id %>
+              <section>
+                <%= render 'shared/micropost_form'%>
+              </section>
+              <%end%>
+
+            </div>
+
+            <div class="col col-lg-8">
+              <% if @user.microposts.any? %>
+                <h3><i class="fa fa-newspaper"></i> Microposts (<%= @user.microposts.count %>) </h3>
+                <div class="newsfeed">
+                <%= render 'shared/feed' %> 
+                </div><br>
+                <div class="d-flex justify-content-center">
+                <%= will_paginate @feed_items %>
+                </div>
+                <% end %>
+            </div>
+      </div>
+
+
+
+    </div>
+  </div><!--Jumbotron End-->
+
+</div> <!--Container End--> 
+</main>
+
